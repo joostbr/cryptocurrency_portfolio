@@ -1,0 +1,20 @@
+{
+  "databaseDir" : "./database/",
+  "startDate" : "01/01/2017 00:00",
+  "windowSize" : 30,
+  "tradeInterval": 3600,
+  "quoteCoin" : "BTC",
+  "coins" : ["USDT","XLM","ETH","NEO","XRP","BCC","XMR","LTC","EOS","ETC"],
+  "quoteCoin_old" : "USDT",
+  "coins_old" : ["NEO","BTC","BCC","BNB","LTC","ETH"],
+  "startUtc": 0,
+
+  "batchSize": 100,
+  "learningRate": 0.001,
+  "learningRate_old": 0.00028,
+  "decayRate": 1.0,
+  "decaySteps": 50000,
+  "trainTestSplit": 0.9,
+
+  "commission": 0.0010
+}
