@@ -9,7 +9,7 @@ class Binanceex:
 
     def __init__(self, config, database):
 
-        self._client = Client("KCIwE4akRHJsHPvdSwQnHAJx26SOtTPtcPrfgqoNhtpB5Bofixd8anLpxwQp5Y9Z", "Gf4hgq9fbS804QMVwDFN88t1c3slV1akOfVn033hcDvKKKsvqCJXBsH0aQcCbmNI")
+        self._client = Client("keyA", "keyB")
         self._database = database
         self._config = config
         self._quoteCoin = config["quoteCoin"]
@@ -144,32 +144,6 @@ class Binanceex:
 
         print(result)
         return result
-
-    def generateOrder(self, balance, source, dest):
-
-        coins = []
-        coins.append(self._quoteCoin)
-        coins.extend(self._config["coins"])
-        i=0
-        for p in dest:
-
-            dpct = int(100*dest[i]+0.5)
-            spct = int(100*source[i]+0.5)
-
-            if spct > dpct:
-                print("sell "+str(i))
-                sellpct = spct - dpct
-                amount = balance[coins[i]]["amount"] * (sellpct/spct)
-
-                print("SELL "+str(amount)+" "+coins[i])
-
-
-            i=i+1
-
-        orders = self._client.get_open_orders()
-        while len(orders)>0:
-            time.sleep(1)
-            orders = self._client.get_open_orders()
 
 
 
